@@ -1,0 +1,11 @@
+---
+applications:
+- name: amazfit
+  memory: 512M
+  disk_quota: 512M
+  instances: 1
+  host: amazfit
+  domain: private.mi-ae.net
+  path: dist
+  stack: cflinuxfs2
+  buildpack: staticfile_buildpack

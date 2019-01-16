@@ -1,0 +1,110 @@
+.app-slide {
+  position: relative;
+
+  .content {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+
+    &:hover {
+      .left, .right {
+        opacity: 1;
+      }
+    }
+
+    .items {
+      display: none;
+    }
+
+    .slides {
+      width: 100000px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+
+      .bg {
+        display: block;
+        height: 100%;
+        float: left;
+      }
+
+      .item {
+        height: 100%;
+        float: left;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .item-content {
+        position: relative;
+        height: 100%;
+        width: 100%;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .items {
+      display: none;
+    }
+  }
+
+  .indicator {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -200px;
+    width: 400px;
+    padding: 20px;
+    text-align: center;
+
+    .item {
+      display: inline-block;
+      height: 4px;
+      width: 50px;
+      margin: 0 3px;
+      cursor: pointer;
+      background-color: #acb0b4;
+
+      &.current {
+        background-color: #2b2b2d;
+      }
+    }
+
+    &.point {
+      .item {
+        height: 8px;
+        width: 8px;
+        background-color: #FFF;
+        border: 1px solid #333;
+        border-radius: 4px;
+
+        &.current {
+          background-color: #333;
+        }
+      }
+    }
+  }
+
+  .left-arrow, .right-arrow {
+    position: absolute;
+    top: 50%;
+    margin-top: -36px;
+    cursor: pointer;
+    z-index: 10;
+    transition: opacity 1s;
+  }
+
+  .left-arrow {
+    left: 10px;
+  }
+
+  .right-arrow {
+    right: 10px;
+  }
+}

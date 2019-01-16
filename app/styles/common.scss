@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: LTCH, Arial;
+  font-size: 18px;
+  color: #333;
+}
+
+body.no-scroll, html.no-scroll {
+    overflow: hidden;
+    height:100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, {
+  font-family: LTCH, Arial;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2.77em;
+}
+
+h3 {
+  font-size: 2.77em;
+}
+
+ul, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+sup {
+  top: -.3em;
+}
+
+br {
+  font-family: none;
+}
+
+.clearfix {
+  &:after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 20;
+
+  .double-bounce1, .double-bounce2 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #333;
+    opacity: 0.6;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-bottom: -50px;
+    margin-left: -50px;
+
+    animation: sk-bounce 2.0s infinite ease-in-out;
+  }
+
+  .double-bounce2 {
+    animation-delay: -1.0s;
+  }
+}
+
+@keyframes sk-bounce {
+  0%, 100% {
+    transform: scale(0.0);
+  } 50% {
+    transform: scale(1.0);
+  }
+}
+
+// 兰亭粗黑
+@font-face {font-family: "LTCH";
+  src: url('../fonts/LTCH.eot'); /* IE9*/
+  src:
+    url('../fonts/LTCH.eot?#font-spider') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/LTCH.woff') format('woff'), /* chrome、firefox */
+    url('../fonts/LTCH.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../fonts/LTCH.svg#webfont') format('svg'); /* iOS 4.1- */
+  font-weight: normal;
+  font-style: normal;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.m-show {
+  display: none;
+}
+
+.pc-show {
+  display: unset;
+}
+
+.hide {
+  display: none;
+}
+
+span.pc-show {
+  display: inline;
+}
+
+.pc {
+  min-width: 1200px;
+}
+
+.mobile-version {
+  display: none;
+}
+
+@media (max-width: 19200px) {
+
+}
+
+@media (max-width: 1400px) {
+
+}
+
+@media (max-width: 768px) {
+
+}

@@ -1,0 +1,75 @@
+#footer {
+  position: relative;
+  min-height: 60px;
+  display: block;
+  *display: inline;
+  *zoom: 1;
+  width: 100%;
+  background: #000;
+  text-align: center;
+
+  a {
+    margin: 0 15px;
+    color: #999;
+    transition: 0.3s;
+    line-height: 60px;
+    position: relative;
+    font-size: 14px;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  p {
+    display: block;
+    line-height: 100% !important;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 20px 0;
+    background-color: #333;
+    color: #5a5a5a;
+    font-size: 14px !important;
+  }
+
+  .language {
+    border: 1px solid #999;
+    padding: 3px 15px;
+    border-radius: 3px;
+  }
+}
+
+#wechat_act {
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  margin-left: -60px;
+  width: 120px;
+  height: 120px;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile {
+    #footer{
+      a {
+        font-size: 12px;
+      }
+
+      p {
+        font-size: 12px !important;
+
+        span {
+          display: block;
+          clear: both;
+          line-height: 100%;
+          padding-top: 20px;
+        }
+      }
+    }
+
+    #wechat {
+      display: none;
+    }
+  }
+}
