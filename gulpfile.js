@@ -33,7 +33,6 @@ let env = {
 }
 
 let mode = process.argv[2] === 'build' ? env.PRODUCT : env.LOCAL;
-mode = env.PRODUCT;
 
 gulp.task('styles', function () {
   let task = gulp.src('./app/styles/**/*.scss')
@@ -68,11 +67,12 @@ gulp.task('scripts', () => {
 gulp.task('images', function() {
   let task = gulp.src('./app/images/**')
     .pipe(gulp.dest('.tmp/images'))
-    .pipe(gulp.dest('dist/images'));
+    .pipe(gulp.dest('dist/images'))
+    .pipe(reload({stream: true}));
   return task;
 });
 
-gulp.task('wiredep', gulp.parallel([], 
+gulp.task('wiredep', gulp.parallel([],
   () => {
     let task = gulp.src('app/**/*.html')
       .pipe(wiredep({
@@ -83,7 +83,7 @@ gulp.task('wiredep', gulp.parallel([],
   })
 );
 
-gulp.task('html', gulp.series([], 
+gulp.task('html', gulp.series(['styles'],
   () => {
     let task = gulp.src('app/**/*.html')
     .pipe(fileinclude({
@@ -98,14 +98,11 @@ gulp.task('html', gulp.series([],
       task.pipe(gulpif('*.js', uglify()))
       .pipe(gulpif('.css', cssnano({safe: true, autoprefixer: false})))
       .pipe(gulpif('*.html', htmlmin({collapseWhitespace: true})))
-      .pipe(gulp.dest('.tmp'))
       .pipe(gulp.dest('dist'));
       return task;
     }
 
-    task.pipe(gulp.dest('.tmp'))
-    .pipe(gulp.dest('dist'))
-    .pipe(reload({stream: true}));
+    task.pipe(gulp.dest('.tmp'));
     return task;
   })
 );
@@ -155,7 +152,7 @@ gulp.task('fontspider', gulp.series([],
   }
 ));
 
-gulp.task('extras', gulp.series([], 
+gulp.task('extras', gulp.series([],
   () => {
     return gulp.src([
       'app/*.*',
@@ -173,7 +170,7 @@ gulp.task('extras', gulp.series([],
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
 // 开发环境
-gulp.task('serve', gulp.series(['wiredep', 'fonts', 'html', 'fontspider', 'styles', 'scripts', 'images'], 
+gulp.task('serve', gulp.series(['wiredep', 'fonts', 'html', 'scripts', 'images', 'fontspider'],
   () => {
     browserSync({
       notify: false,
@@ -191,14 +188,13 @@ gulp.task('serve', gulp.series(['wiredep', 'fonts', 'html', 'fontspider', 'style
     ]).on('change', reload);
 
     gulp.watch('app/**/*.html', gulp.series(['html']));
-    gulp.watch('app/styles/**/*.scss', gulp.series(['styles']));
+    gulp.watch('app/styles/**/*.scss', gulp.series(['styles', 'html']));
     gulp.watch('app/scripts/**/*.js', gulp.series(['scripts']));
-    gulp.watch('app/fonts/**/*', gulp.series(['fonts']));
   })
 );
 
 // 生产环境
-gulp.task('build', gulp.series(['fonts', 'images', 'html', 'hash:css', 'hash:html', 'fontspider', 'extras'], 
+gulp.task('build', gulp.series(['fonts', 'images', 'html', 'hash:css', 'hash:html', 'fontspider', 'extras'],
   () => {
     return gulp.src('dist/**/*').pipe(size({title: 'build', gzip: true, showFiles: true}));
   })
