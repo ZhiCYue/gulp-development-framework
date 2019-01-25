@@ -6,7 +6,7 @@
     "yuezhichao <yuezhichao@huami.com>"
   ],
   "license": "ISC",
-  "homepage": "",
+  "homepage": "index.html",
   "ignore": [
     "**/.*",
     "node_modules",

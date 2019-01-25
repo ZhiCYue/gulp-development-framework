@@ -5,17 +5,17 @@ gulp 搭建的web&amp;mobile 开发框架，包含部分模块化、压缩、has
 
 ### 安装依赖包
 ```
-# npm install
+# yarn install
 # bower install
 ```
 
 ### 命令
 ```
-# npm run dev
+# yarn dev
 ```
 或
 ```
-# npm run build
+# yarn build
 ```
 *最终构建产物在dist 目录*
 
