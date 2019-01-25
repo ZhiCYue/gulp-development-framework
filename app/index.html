@@ -17,13 +17,31 @@
 
   @@include('./elements/header.html')
 
-  <div id="index" class="font">
+  <div id="index">
+    <section id="pc-switch" class="font">
 
-    技术可以让网页使用特殊
+      这里设置了高度1000 ，来模拟滚动效果
 
+    </section>
+
+    <section id="m-switch">
+      这是移动端显示的内容
+    </section>
   </div>
 
   @@include('./elements/footer.html')
+
+<!-- build:js scripts/main.js -->
+<script src="scripts/main.js"></script>
+<!-- endbuild -->
+
+<!-- build:js scripts/appSlide.js -->
+<script src="scripts/appSlide.js"></script>
+<!-- endbuild -->
+
+<!-- build:js scripts/index.js -->
+<script src="scripts/index.js"></script>
+<!-- endbuild -->
 
 </body>
 </html>

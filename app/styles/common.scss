@@ -3,7 +3,6 @@
 }
 
 body {
-  font-family: LTCH, Arial;
   font-size: 18px;
   color: #333;
 }
@@ -15,10 +14,6 @@ body.no-scroll, html.no-scroll {
 
 a {
   text-decoration: none;
-}
-
-h1, h2, h3, h4, h5, {
-  font-family: LTCH, Arial;
 }
 
 h1 {
@@ -97,7 +92,7 @@ br {
   }
 }
 
-// 兰亭粗黑
+// 自定义字体
 @font-face {font-family: "LTCH";
   src: url('../fonts/LTCH.eot'); /* IE9*/
   src:
