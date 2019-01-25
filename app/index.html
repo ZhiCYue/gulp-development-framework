@@ -13,18 +13,28 @@
   <!-- endbuild -->
 
 </head>
-<body>
+<body id="home">
 
   @@include('./elements/header.html')
 
+  <nav class="quick-nav">
+    <div class="container">
+      <ul class="clearfix">
+        <li><a href="#top">Top</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="top"></div>
+
   <div id="index">
-    <section id="pc-switch" class="font">
+    <section id="pc-switch" class="section">
 
       这里设置了高度1000 ，来模拟滚动效果
 
     </section>
 
-    <section id="m-switch">
+    <section id="m-switch" class="section">
       这是移动端显示的内容
     </section>
   </div>

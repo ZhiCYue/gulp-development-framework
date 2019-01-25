@@ -3,5 +3,163 @@
   font-size: 14px;
 
   margin-top: 60px;
-  height: 600px;
+
+  .section {
+    position: relative;
+    width: 100%;
+
+    .bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    article {
+      position: absolute;
+
+      h1 {
+        font-family: FZLTXH, Arial;
+        font-size: 0.2em;
+        font-weight: normal;
+        margin: .3em 0;
+      }
+
+      h2 {
+        font-family: FZLTXH, serif;
+        font-size: .16em;
+        margin: .3em 0;
+        font-weight: normal;
+      }
+
+    }
+
+    p {
+      font-size: 0.12em;
+      line-height: 1.8em;
+      opacity: .8;
+    }
+
+    p:not(.title) {
+      font-family: FZLTXH, serif;
+    }
+
+    p.title {
+      font-family: FZLTH, serif;
+      font-size: .14em;
+      line-height: 1.5em;
+      margin: 0;
+      margin-top: 1.2em;
+      font-weight: normal;
+    }
+
+    p.tip {
+      font-size: .16em;
+    }
+
+  }
+}
+
+
+.sticky-section {
+  overflow: hidden;
+
+  .sticky {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .bg {
+    transition: transform 3s;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &.active.up {
+      transform: translateY(20px);
+    }
+
+    &.active.down {
+      transform: translateY(-20px);
+    }
+  }
+
+  .opacity-bg {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: #000;
+    opacity: 0.8;
+  }
+
+  article {
+    color: #fff;
+    width: 1200px;
+    left: 50%;
+    margin-left: -600px;
+    bottom: 26%;
+    text-align: center;
+    z-index: 10;
+
+    p {
+      color: #fff;
+    }
+  }
+
+  sup {
+    color: orange;
+  }
+}
+
+
+#demo-section-1 {
+  height: 6.46em;
+
+  article {
+    left: 2em;
+    top: 1em;
+  }
+
+}
+
+#demo-section-4 {
+  height: 8em;
+
+  article {
+    top: .4em;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 4em;
+    text-align: center;
+  }
+
+  .banners {
+    width: 4.5em;
+    height: 6.46em;
+    margin: 0 auto;
+    top: 1.2em;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+  #home.mobile {
+    .section {
+      display: none;
+    }
+
+    .bg {
+      background: none;
+    }
+  }
+
 }

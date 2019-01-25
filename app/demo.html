@@ -13,14 +13,107 @@
   <!-- endbuild -->
 
 </head>
-<body>
+<body id="home">
 
   @@include('./elements/header.html')
 
-  <div id="demo">
+  <nav class="quick-nav">
+    <div class="container">
+      <ul class="clearfix">
+        <li><a href="#top">清新</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    demo
+  <div id="top"></div>
 
+  <div id="demo" data-font-size>
+
+    <section id="demo-section-1" class="section" data-scroll>
+      <img class="bg" src="images/demo/b-1.jpg">
+      <article>
+        <h1>如果让我遇见你，我会深深凝望你的脸</h1>
+        <p>醉经典、时尚搭配、街拍摄影、时尚资讯、美女模特</p>
+      </article>
+    </section>
+
+    <section id="demo-section-4" class="section" data-scroll>
+      <article>
+        <h2>如果让我遇见你，我会深深凝望你的脸</h2>
+        <p>醉经典、时尚搭配、街拍摄影、时尚资讯、美女模特</p>
+      </article>
+
+      <div class="banners app-slide" data-slide>
+        <div class="content">
+          <div class="items">
+            <div class="item">
+              <div class="item-content">
+                <img data-src="/images/demo/1.jpg" class="pc-show bg"/>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-content">
+                  <img data-src="/images/demo/2.jpg" class="pc-show bg"/>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-content">
+                  <img data-src="/images/demo/3.jpg" class="pc-show bg"/>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-content">
+                  <img data-src="/images/demo/4.jpg" class="pc-show bg"/>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-content">
+                  <img data-src="/images/demo/5.jpg" class="pc-show bg"/>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="indicator">
+          <span class="item current"></span>
+          <span class="item"></span>
+          <span class="item"></span>
+          <span class="item"></span>
+          <span class="item"></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo-section-2" class="section sticky-section" data-scroll>
+      <div class="sticky">
+        <i class="bg" data-pc-bg="/images/demo/b-2.jpg"></i>
+        <div class="opacity-bg"></div>
+      </div>
+      <article>
+        <h2 class="title">如果让我遇见你，我会深深凝望你的脸</h2>
+        <p>醉经典、时尚搭配、街拍摄影、时尚资讯、美女模特</p>
+      </article>
+    </section>
+
+    <section id="demo-section-3" class="section sticky-section" data-scroll>
+      <div class="sticky">
+        <i class="bg" data-pc-bg="/images/demo/b-3.jpg"></i>
+        <div class="opacity-bg"></div>
+      </div>
+      <article>
+        <h2 class="title">如果让我遇见你，我会深深凝望你的脸</h2>
+        <p>醉经典、时尚搭配、街拍摄影、时尚资讯、美女模特</p>
+      </article>
+    </section>
+
+  </div>
+
+  <div class="mobile-version">
+    <img src="/images/demo/1.jpg"/>
+    <img src="/images/demo/2.jpg"/>
+    <img src="/images/demo/3.jpg"/>
+    <img src="/images/demo/4.jpg"/>
+    <img src="/images/demo/5.jpg"/>
   </div>
 
   @@include('./elements/footer.html')
@@ -28,6 +121,14 @@
   <!-- build:js scripts/main.js -->
 <script src="scripts/main.js"></script>
 <!-- endbuild -->
+
+<!-- build:js scripts/appSlide.js -->
+<script src="scripts/appSlide.js"></script>
+<!-- endbuild -->
+
+  <!-- build:js scripts/demo.js -->
+  <script src="scripts/demo.js"></script>
+  <!-- endbuild -->
 
 </body>
 </html>

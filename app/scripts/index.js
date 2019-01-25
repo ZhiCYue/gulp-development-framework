@@ -32,7 +32,7 @@ $(function(){
     width = document.body.clientWidth;
     var targets = document.querySelectorAll('[data-font-size]');
     [].forEach.call(targets, function(target){
-      target.style.fontSize = width/2560*100 + 'px';
+      target.style.fontSize = width/900*100 + 'px';
     });
   }
 
@@ -59,8 +59,6 @@ $(function(){
       }
     });
   }
-
-
 
   $(window).scroll(scroll);
   scroll();

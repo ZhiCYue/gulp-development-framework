@@ -4,8 +4,21 @@
   height: 1000px;
 }
 
-.font {
+.section {
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
   font-size: 14px;
 }
 
+
+@media (max-width: 768px) {
+  #home.mobile {
+    .section {
+      display: none;
+    }
+
+    .bg {
+      background: none;
+    }
+  }
+
+}
